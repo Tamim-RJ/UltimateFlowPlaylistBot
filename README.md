@@ -22,6 +22,15 @@ A Telegram bot built with Aiogram 3 for music requests, feedback, ratings, and a
 - CHANNEL_USERNAME: Channel username for membership checks
 - DATABASE_URL: Database connection string
 
+## PostgreSQL on Railway
+Use a PostgreSQL URL for `DATABASE_URL` in `.env`, for example:
+
+```env
+DATABASE_URL=postgresql+asyncpg://user:password@hostname:5432/database_name
+```
+
+If Railway provides a `postgres://...` URL, the bot normalizes it automatically to `postgresql+asyncpg://`.
+
 ## Notes
-- The default database is SQLite.
-- For production deployment, you can switch DATABASE_URL to PostgreSQL.
+- The default local database is SQLite if `DATABASE_URL` is not set.
+- For production deployment, set `DATABASE_URL` to your PostgreSQL connection string.
